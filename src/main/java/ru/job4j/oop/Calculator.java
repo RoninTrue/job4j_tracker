@@ -20,8 +20,7 @@ public class Calculator {
     }
 
     public int sumAllOperation(int y) {
-        Calculator calc = new Calculator();
-        return sum(y) + minus(y) + calc.divide(y) + calc.multiply(y);
+        return sum(y) + minus(y) + divide(y) + multiply(y);
     }
 
     public static void main(String[] args) {
