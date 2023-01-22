@@ -12,14 +12,13 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " Введите число от 1 до 3: ");
             int matches = Integer.parseInt(input.nextLine());
-            turn = !turn;
-            boolean permission = matches >= 1 && matches <= 3 && matches <= count;
+            boolean permission = matches >= 1 && matches <= Math.min(3, count);
             if (permission) {
                 count -= matches;
                 System.out.println("Осталось " + count + " спичек");
+                turn = !turn;
             } else {
                 System.out.println("Пожалуйста, введите кол-во спичек от 1 до 3:\nкол-во спичек: " + count);
-                turn = true;
             }
         }
         if (!turn) {
