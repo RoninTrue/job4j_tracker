@@ -8,8 +8,9 @@ public class StubOutput implements Output {
         if (obj != null) {
             buffer.append(obj.toString());
         } else {
-            buffer.append(System.lineSeparator());
+            buffer.append("null");
         }
+        buffer.append(System.lineSeparator());
     }
 
     @Override
