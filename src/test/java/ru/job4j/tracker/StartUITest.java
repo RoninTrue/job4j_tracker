@@ -85,10 +85,11 @@ class StartUITest {
     public void whenFindByNameItemTest() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        Item one = tracker.add(new Item("test"));
+        String name = "test";
+        Item one = tracker.add(new Item(name));
         Item two = tracker.add(new Item("TEST"));
-        Item three = tracker.add(new Item("test"));
-        Input in = new StubInput(new String[] {"0", "test", "1"});
+        Item three = tracker.add(new Item(name));
+        Input in = new StubInput(new String[] {"0", name, "1"});
         UserAction[] actions = new UserAction[] {new FindByNameAction(out), new ExitAction(out)};
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
