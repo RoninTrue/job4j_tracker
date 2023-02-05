@@ -27,12 +27,12 @@ public class ValidateInputTest {
         Output out = new StubOutput();
         Input in = new StubInput(new String[] {"3", "1", "6"});
         ValidateInput input = new ValidateInput(out, in);
-        int[] array = new int[3];
-        for (int index = 0; index < array.length; index++) {
-            int selected = input.askInt("Enter menu:");
-            array[index] = selected;
-        }
-        assertThat(array).containsExactly(3, 1, 6);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(3);
+        selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(1);
+        selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(6);
     }
 
     @Test
