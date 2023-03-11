@@ -13,12 +13,10 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder temp = new StringBuilder();
-        int size = evenElements.size();
+        int size = evenElements.size() / 2;
         for (int index = 0; index < size; index++) {
-            if (index % 2 == 0) {
-                temp.append(evenElements.peek());
-            }
-            evenElements.poll();
+                temp.append(evenElements.poll());
+                evenElements.poll();
         }
         return temp.toString();
     }
@@ -27,8 +25,7 @@ public class ReconstructPhrase {
         StringBuilder temp = new StringBuilder();
         int size = descendingElements.size();
         for (int index = 0; index < size; index++) {
-            temp.append(descendingElements.peekLast());
-            descendingElements.pollLast();
+            temp.append(descendingElements.pollLast());
         }
         return temp.toString();
     }
