@@ -17,4 +17,15 @@ class ItemDescByNameTest {
         List<Item> expected = Arrays.asList(item2, item1, item3);
         assertThat(expected).isEqualTo(items);
     }
+
+    @Test
+    void whenNotCompareByNameByDesc() {
+        Item item1 = new Item("Petr");
+        Item item2 = new Item("Sergey");
+        Item item3 = new Item("Alex");
+        List<Item> items = Arrays.asList(item1, item2, item3);
+        items.sort(new ItemDescByName());
+        List<Item> expected = Arrays.asList(item1, item2, item3);
+        assertThat(expected).isNotEqualTo(items);
+    }
 }
