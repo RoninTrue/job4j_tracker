@@ -10,12 +10,12 @@ public class PriorityQueueRunner {
         stringQueue.offer("s");
         stringQueue.offer("e");
         printStingElements(stringQueue);
-//        PriorityQueue<Transaction> transactions = new PriorityQueue<>(new TransactionSortDescByAmount());
-//        transactions.offer(new Transaction(1, "number_1", 100));
-//        transactions.offer(new Transaction(2, "number_2", 1000));
-//        transactions.offer(new Transaction(3, "number_3", 85));
-//        transactions.offer(new Transaction(4, "number_4", 550));
-//        printTransactionElements(transactions);
+        PriorityQueue<Transaction> transactions = new PriorityQueue<>(new TransactionSortDescByAmount());
+        transactions.offer(new Transaction(1, "number_1", 100));
+        transactions.offer(new Transaction(2, "number_2", 1000));
+        transactions.offer(new Transaction(3, "number_3", 85));
+        transactions.offer(new Transaction(4, "number_4", 550));
+        printTransactionElements(transactions);
     }
 
     private static void printStingElements(PriorityQueue<String> queue) {
