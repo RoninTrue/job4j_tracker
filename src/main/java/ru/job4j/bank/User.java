@@ -2,10 +2,26 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Модель данных.
+ * Класс описывает пользователя при регистрации в банковской системе.
+ */
 public class User {
+    /**
+     * Поле описывает паспорт пользователя.
+     * Это поле уникально идентифицирует пользователя.
+     */
     private String passport;
+    /**
+     * Поле описывает имя пользователя
+     */
     private String username;
 
+    /**
+     * Конструктор класса User. Создание объекта и инициализация полей
+     * @param passport строковое значение паспорт.
+     * @param username строковое значение имяПользователя.
+     */
     public User(String passport, String username) {
         this.passport = passport;
         this.username = username;
