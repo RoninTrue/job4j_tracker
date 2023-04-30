@@ -32,12 +32,13 @@ class SchoolTest {
         List<Student> students = List.of(
                 new Student(20, "Surname2"),
                 new Student(30, "Surname3"),
+                new Student(70, "Surname7"),
                 new Student(50, "Surname5"),
                 new Student(60, "Surname6"),
                 new Student(80, "Surname8")
         );
         School school = new School();
-        Predicate<Student> predicate = s -> s.getScope() >= 50 && s.getScope() <= 70;
+        Predicate<Student> predicate = s -> s.getScope() >= 50 && s.getScope() < 70;
         List<Student> result = school.collect(students, predicate);
         List<Student> expected = new ArrayList<>();
         expected.add(new Student(50, "Surname5"));
@@ -51,11 +52,12 @@ class SchoolTest {
                 new Student(10, "Surname1"),
                 new Student(30, "Surname3"),
                 new Student(40, "Surname4"),
+                new Student(50, "Surname5"),
                 new Student(60, "Surname6"),
                 new Student(90, "Surname9")
         );
         School school = new School();
-        Predicate<Student> predicate = s -> s.getScope() >= 0 && s.getScope() <= 50;
+        Predicate<Student> predicate = s -> s.getScope() >= 0 && s.getScope() < 50;
         List<Student> result = school.collect(students, predicate);
         List<Student> expected = new ArrayList<>();
         expected.add(new Student(10, "Surname1"));
