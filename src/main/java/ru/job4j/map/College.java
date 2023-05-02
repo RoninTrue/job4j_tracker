@@ -11,12 +11,6 @@ public class College {
     }
 
     public Student findByAccount(String account) {
-//        for (Student s : students.keySet()) {
-//            if (s.account().equals(account)) {
-//                return s;
-//            }
-//        }
-//        return null;
         return students.keySet()
                 .stream()
                 .filter(s -> s.account().equals(account))
