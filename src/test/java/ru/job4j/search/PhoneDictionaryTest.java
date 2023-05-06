@@ -9,17 +9,17 @@ class PhoneDictionaryTest {
 
     @Test
     void whenFindByName() {
-        PhoneDictionary phoneDictionary = new PhoneDictionary();
+        var phoneDictionary = new PhoneDictionary();
         phoneDictionary.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
-        ArrayList<Person> persons = phoneDictionary.find("Petr");
+        var persons = phoneDictionary.find("Petr");
         assertThat(persons.get(0).getSurname()).isEqualTo("Arsentev");
     }
 
     @Test
     void whenNotFind() {
-        PhoneDictionary phoneDictionary = new PhoneDictionary();
+        var phoneDictionary = new PhoneDictionary();
         phoneDictionary.add(new Person("Sergey", "Vasenev", "89000", "Tomsk"));
-        ArrayList<Person> persons = phoneDictionary.find("vasenev");
+        var persons = phoneDictionary.find("vasenev");
         assertTrue(persons.isEmpty());
     }
 }
