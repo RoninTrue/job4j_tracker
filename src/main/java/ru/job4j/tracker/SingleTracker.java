@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import java.util.List;
 
 public final class SingleTracker {
-    private Tracker tracker = new Tracker();
+    private Store tracker = new MemTracker();
     private static SingleTracker instance = null;
 
     private SingleTracker() { }
@@ -35,7 +35,7 @@ public final class SingleTracker {
         return tracker.replace(id, item);
     }
 
-    public boolean delete(int id) {
-        return tracker.delete(id);
+    public void delete(int id) {
+        tracker.delete(id);
     }
 }
