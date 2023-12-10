@@ -1,0 +1,13 @@
+2023-12-10 14:54:50.744865+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+INSERT INTO items(name, created) VALUES (?, ?) [42104-222]
+2023-12-10 14:54:50.751218+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+SELECT * FROM items WHERE id = ? [42104-222]
+2023-12-10 14:54:50.821167+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+delete from items [42104-222]
+2023-12-10 14:55:09.467770+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "DATABASECHANGELOGLOCK" не найдена
+Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+SELECT COUNT(*) FROM DATABASECHANGELOGLOCK [42102-222]
