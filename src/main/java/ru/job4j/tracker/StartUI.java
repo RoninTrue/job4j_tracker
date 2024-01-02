@@ -34,11 +34,11 @@ public class StartUI {
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
-        try (Store tracker = new SqlTracker()) {
+        try (Store tracker = new MemTracker()) {
             List<UserAction> actions = List.of(
-                    new CreateAction(output),
+                    new CreateManyItems(output),
                     new EditAction(output),
-                    new DeleteAction(output),
+                    new DeleteAllItems(output),
                     new ShowAllAction(output),
                     new FindByIdAction(output),
                     new FindByNameAction(output),
