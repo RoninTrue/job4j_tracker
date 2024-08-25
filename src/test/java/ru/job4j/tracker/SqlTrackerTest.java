@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.List;
@@ -18,7 +19,7 @@ public class SqlTrackerTest {
 
     @BeforeAll
     public static void initConnection() {
-        try (InputStream in = SqlTracker.class.getClassLoader().getResourceAsStream("db/liquibase_test.properties")) {
+        try (InputStream in = new FileInputStream("db/liquibase_test.properties")) {
             Properties config = new Properties();
             config.load(in);
             Class.forName(config.getProperty("driver-class-name"));
