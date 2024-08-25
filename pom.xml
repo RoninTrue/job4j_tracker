@@ -19,7 +19,7 @@
         <profile>
             <id>test</id>
             <properties>
-                <liquibase.config>src/main/resources/db/liquibase_test.properties</liquibase.config>
+                <liquibase.config>db/liquibase_test.properties</liquibase.config>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -28,17 +28,27 @@
         <profile>
             <id>production</id>
             <properties>
-                <liquibase.config>src/main/resources/db/liquibase.properties</liquibase.config>
+                <liquibase.config>db/liquibase.properties</liquibase.config>
             </properties>
         </profile>
     </profiles>
 
     <dependencies>
         <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.11.Final</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.5.5.Final</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
