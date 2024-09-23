@@ -3,10 +3,13 @@ package ru.job4j.tracker;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import ru.job4j.toone.User;
 
 import javax.persistence.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -22,6 +25,13 @@ public class Item {
     @EqualsAndHashCode.Include
     private String name;
     private  LocalDateTime created = LocalDateTime.now().withNano(0);
+    @ManyToMany
+    @JoinTable(
+            name = "participates",
+            joinColumns = { @JoinColumn(name = "item_id") },
+            inverseJoinColumns = { @JoinColumn(name = "user_id") }
+    )
+    private List<User> participates = new ArrayList<>();
 
     public Item(String name) {
         this.name = name;
