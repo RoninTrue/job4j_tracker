@@ -110,7 +110,8 @@ public class HbmTracker implements Store, AutoCloseable {
         Item item = null;
         try {
             session.beginTransaction();
-            item = session.createQuery("from Item WHERE id = :id", Item.class).uniqueResult();
+            var query = session.createQuery("from Item WHERE id = :id", Item.class).setParameter("id", id);
+            item = query.uniqueResult();
             session.getTransaction().commit();
         } catch (Exception e) {
             session.getTransaction().rollback();
