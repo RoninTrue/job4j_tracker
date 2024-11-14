@@ -24,7 +24,7 @@ public class Item {
     private int id;
     @EqualsAndHashCode.Include
     private String name;
-    private  LocalDateTime created = LocalDateTime.now().withNano(0);
+    private  LocalDateTime created = LocalDateTime.now(ZoneId.of("UTC")).withNano(0);
     @ManyToMany
     @JoinTable(
             name = "participates",
