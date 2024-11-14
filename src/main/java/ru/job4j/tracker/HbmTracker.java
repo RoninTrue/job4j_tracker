@@ -76,7 +76,7 @@ public class HbmTracker implements Store, AutoCloseable {
         List<Item> items = new ArrayList<>();
         try {
             session.beginTransaction();
-            items = session.createQuery("form Item", Item.class).list();
+            items = session.createQuery("FROM Item", Item.class).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             session.getTransaction().rollback();
